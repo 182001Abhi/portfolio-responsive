@@ -25,7 +25,7 @@
   --z-back: -10;
   --z-fixed: 100;
 }
-@media screen and (min-width: 968px) {
+@media screen and (min-width: 768px) {
   :root {
     --big-font-size: 3.5rem;
     --h2-font-size: 2rem;
@@ -122,7 +122,7 @@ img {
   align-items: center;
   font-weight: var(--font-semi);
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 769px) {
   .nav__menu {
     position: fixed;
     top: var(--header-height);
@@ -246,52 +246,199 @@ img {
   justify-self: center;
 }
 .about__img img {
-  width: 200px;
+  width: 150px;
   border-radius: 0.5rem;
 }
+.about-section h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+}
 
-/* ===== SKILLS =====*/
-.skills__container {
+.about-section p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: #555;
+  line-height: 1.6;
+  font-weight: bold;
+}
+p {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  line-height: 1.5;
+}
+
+ /*===== SKILLS =====*/
+ body {
+  background: #ffffff;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: large;
+}
+
+.skills.section {
+  text-align: center;
+}
+
+.orbit-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+}
+
+.center-sun {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  background: #facc15;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 3rem; /* Adjust spacing between buttons */
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.skills__btn {
-  padding: 1rem 2rem; /* Adjust padding for the button size */
-  font-size: 1rem;
+  align-items: center;
   font-weight: bold;
-  border: 2px solid #000; /* Black border */
-  border-radius: 25px; /* Rounded edges */
-  background-color: transparent; /* Transparent background */
-  color: #000; /* Black text */
-  cursor: pointer; /* Make the cursor interactive */
-  text-transform: uppercase; /* Uppercase text */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  color: #0f172a;
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.5);
+  z-index: 2;
 }
 
-.skills__btn:hover {
-  background-color: #000; /* Black background on hover */
-  color: #fff; /* White text color on hover */
-  border-color: #000; /* Keep border black */
+/* Inner Orbit Circle */
+.orbit-inner::before {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border: 1.5px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
-.skills__section-title {
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #000;
+/* Outer Orbit Circle */
+.orbit-outer::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border: 1.5px dashed rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
 
-.section-title span {
-  font-size: 2.5rem;
-  display: block;
-  margin-top: 0.5rem;
+.orbit-inner,
+.orbit-outer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  animation: rotate 20s linear infinite;
 }
+
+.orbit-outer {
+  animation: rotate 40s linear infinite reverse;
+}
+
+.planet {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s;
+  z-index: 3;
+}
+
+.planet:hover {
+  transform: scale(1.2);
+}
+
+.planet img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+/* Position Inner Orbit Planets */
+.orbit-inner .planet:nth-child(1) {
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-inner .planet:nth-child(2) {
+  left: 15%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-inner .planet:nth-child(3) {
+  bottom: 15%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.orbit-inner .planet:nth-child(4) {
+  right: 15%;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+/* Position Outer Orbit Planets */
+.orbit-outer .planet:nth-child(1) {
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-outer .planet:nth-child(2) {
+  left: 0%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.orbit-outer .planet:nth-child(3) {
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.orbit-outer .planet:nth-child(4) {
+  right: 0%;
+  top: 50%;
+  transform: translate(50%, -50%);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
 
 /*======Work======*/
 .work__container {
@@ -351,9 +498,11 @@ img {
 
 .certifications__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
   justify-items: center;
+  max-width: 1200px; /* Keeps layout tighter on wide screens */
+  margin: 0 auto; /* Centers the grid */
 }
 
 .certifications__item {
@@ -363,7 +512,8 @@ img {
   overflow: hidden;
   box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
   padding: 1rem;
-  max-width: 300px;
+  width: 100%;
+  max-width: 250px;
   cursor: pointer;
 }
 
@@ -375,11 +525,13 @@ img {
 }
 
 .certifications__title {
-  margin-top: 1rem;
-  font-size: 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
   font-weight: bold;
   color: #333;
+  text-align: center;
 }
+
 
 /* Zoomed-in style for clicked certificate */
 .certifications__img.zoomed {
@@ -441,6 +593,41 @@ img {
   cursor: pointer;
   margin-left: auto;
 }
+/* Contact Form Styling */
+.contact__input {
+    width: 100%;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1.5px solid var(--second-color);
+    outline: none;
+    margin-bottom: var(--mb-4);
+}
+
+.contact__button {
+    display: block;
+    border: none;
+    outline: none;
+    font-size: var(--normal-font-size);
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* Success message */
+.success-message {
+    display: none;
+    text-align: center;
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 1rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
 /* ===== FOOTER =====*/
 .footer {
@@ -453,6 +640,7 @@ img {
 .footer__title {
   font-size: 2rem;
   margin-bottom: var(--mb-4);
+  text-align: center;
 }
 .footer__social {
   margin-bottom: var(--mb-4);
@@ -464,10 +652,11 @@ img {
 }
 .footer__copy {
   font-size: var(--smaller-font-size);
+  text-align: center;
 }
 
 /* ===== MEDIA QUERIES=====*/
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 769px) {
   .home {
     row-gap: 2rem;
   }
@@ -475,7 +664,7 @@ img {
     width: 200px;
   }
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 768px) {
   .home {
     padding: 4rem 0 2rem;
   }
@@ -572,7 +761,7 @@ img {
     column-gap: 2rem;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .bd-grid {
     margin-left: auto;
     margin-right: auto;

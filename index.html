@@ -42,7 +42,7 @@
                 <div class="home__data">
                     <h1 class="home__title">Hi,<br>I'am <span class="home__title-color">Abhishek</span><br> Software Developer</h1>
 
-                    <a href="files/Abhishek Tahasildar(Python Developer,Data Analyst).pdf" class="button" download>Download Resume</a>
+                    <a href="files/Abhishek Tahasildar.pdf" class="button" download>Download Resume</a>
                 </div>
 
                 <div class="home__social">
@@ -79,32 +79,44 @@
                 </div>
             </section>
 
-            <!--===== SKILLS =====-->
-            <section class="skills section" id="skills">
-                <h2 class="section-title">Skills</h2>
-            
-                <div class="skills__container bd-grid">
-                    <div class="skills__container bd-grid">
-                        <button class="skills__btn" disabled>PYTHON</button>
-                        <button class="skills__btn" disabled>SQL</button>
-                        <button class="skills__btn" disabled>POWER BI</button>
-                        <button class="skills__btn" disabled>EXCEL</button>
-                        <button class="skills__btn" disabled>AWS</button>
-                        <button class="skills__btn" disabled>PROBLEM-SOLVING</button>
-                        <button class="skills__btn" disabled>COMMUNICATION</button>
-                        <button class="skills__btn" disabled>ATTENTION TO DETAIL</button>
-                        <button class="skills__btn" disabled>ANALYTICAL THINKING</button>
-                        <button class="skills__btn" disabled>POWERPOINT</button>
-                        <button class="skills__btn" disabled>DJANGO</button>
-                        <button class="skills__btn" disabled>VISUALIZATION</button>
-                        <button class="skills__btn" disabled>KPI AND MATRICS</button>
-                        <button class="skills__btn" disabled>DOMAIN KNOWLEDGE</button>
-                        <button class="skills__btn" disabled>TABLEAU</button>
-                        <button class="skills__btn" disabled>GOOGLE ANALYTICS</button>
-                    </div>
-                </div>
-            </section>
-            
+<!--===== SKILLS =====-->
+<section class="skills section" id="skills">
+<h2 class="section-title">Skills</h2>
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skills Orbit Animation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="orbit-container">
+    <div class="center-sun">Skills</div>
+
+    
+
+    <!-- Inner Orbit -->
+    <div class="orbit-inner">
+      <div class="planet"><img src="assets/img/python.png" alt="Python"></div>
+      <div class="planet"><img src="assets/img/sql.png" alt="SQL"></div>
+      <div class="planet"><img src="assets/img/Power Bi png.png" alt="Power BI"></div>
+      <div class="planet"><img src="assets/img/excel.png" alt="Excel"></div>
+    </div>
+
+    <!-- Outer Orbit -->
+    <div class="orbit-outer">
+      <div class="planet"><img src="assets/img/Numpy.png" alt="Numpy"></div>
+      <div class="planet"><img src="assets/img/tableau.png" alt="Tableau"></div>
+      <div class="planet"><img src="assets/img/Pandas (1).png" alt="Pandas"></div>
+      <div class="planet"><img src="assets/img/aws.png" alt="AWS"></div>
+    </div>
+  </div>
+
+
+</body>
 
             <!--===== WORK =====-->
             <section class="work section" id="work">
@@ -153,20 +165,20 @@
                 <h2 class="section-title">Certifications</h2>
                 <div class="certifications__container">
                     <div class="certifications__item">
-                        <img src="assets/certificates/certificate1.jpg" alt="Certificate 1" class="certifications__img">
-                        <p class="certifications__title">Data & Business Analytics Advanced Certification Program</p>
+                        <img src="assets/img/Python.jpg" alt="Certificate 1" class="certifications__img">
+                        <p class="certifications__title">Python Certification from Job Aaj Learning</p>
                     </div>
                     <div class="certifications__item">
-                        <img src="assets/img/Accenture data analytics.jpg" alt="Certificate 2" class="certifications__img">
-                        <p class="certifications__title">Data Analytics and Visualization Job Simulation By Accenture</p>
+                        <img src="assets/img/Power Bi.jpg" alt="Certificate 2" class="certifications__img">
+                        <p class="certifications__title">POWER BI Certification from Job Aaj Learning</p>
                     </div>
                     <div class="certifications__item">
                         <img src="assets/img/Excel Essential.jpg" alt="Certificate 3" class="certifications__img">
-                        <p class="certifications__title">Excel Essential Formula and Functions </p>
+                        <p class="certifications__title">Excel Certification from Job Aaj Learning</p>
                     </div>
                     <div class="certifications__item">
-                        <img src="assets/img/Tableau Workshop.jpg" alt="Certificate 4" class="certifications__img">
-                        <p class="certifications__title">Tableau Workshop</p>
+                        <img src="assets/img/Sql.jpg" alt="Certificate 4" class="certifications__img">
+                        <p class="certifications__title">SQL Certification from Job Aaj Learning</p>
                     </div>
                 </div>
             </section>
@@ -179,11 +191,13 @@
                 <h2 class="section-title">Contact</h2>
             
                 <div class="contact__container bd-grid">
-                    <form action="https://formspree.io/f/xrbbpdvn" method="POST" class="contact__form">
+                    <form action="https://formspree.io/f/xeoozrbr" method="POST" class="contact__form" id="contact-form">
                         <input type="text" name="name" placeholder="Name" class="contact__input" required>
                         <input type="email" name="email" placeholder="Email" class="contact__input" required>
                         <textarea name="message" placeholder="Write your message here" cols="0" rows="10" class="contact__input" required></textarea>
                         <button type="submit" class="contact__button button">Send</button>
+                        <!-- Success message placeholder -->
+                        <p class="success-message" id="success-msg">Your message has been sent successfully!</p>
                     </form>
                 </div>
             </section>
@@ -193,7 +207,7 @@
 
         <!--===== FOOTER =====-->
         <footer class="footer">
-            <p class="footer__title">Abhishek Tahasildar</p>
+            <center><p class="footer__title">Abhishek Tahasildar</p></center>
             <div class="footer__social">
                 <a href="https://github.com/182001Abhi/" class="footer__icon"><i class='bx bxl-github' ></i></a>
                 <a href="https://www.linkedin.com/in/abhishek-tahasildar/" class="footer__icon"><i class='bx bxl-linkedin' ></i></a>
